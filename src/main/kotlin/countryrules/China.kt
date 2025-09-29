@@ -1,6 +1,6 @@
 package nl.joozd.aircraftreg.countryrules
 
-object China: CountryRulesImpl('B') {
+internal object China: CountryRulesImpl('B') {
     override val ranges = listOf(
         // B-0000 to B-9999
         // B-000A to B-99ZZ (General)[c]

@@ -1,6 +1,6 @@
 package nl.joozd.aircraftreg.countryrules
 
-object DominicanRepublic: CountryRulesImpl('H') {
+internal object DominicanRepublic: CountryRulesImpl('H') {
     override val ranges= listOf(
         "HI100AA" upTo "HI999ZZ",
         "HI100 " upTo "HI100 ",

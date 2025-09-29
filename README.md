@@ -1,3 +1,5 @@
+Module aircraftRegWithDash
+
 # AircraftRegistrationFormatter
 
 This module puts the dash in the correct position in an aircraft registration
@@ -35,3 +37,13 @@ println(formatter.formatRegistrationString("PHKLM"))
 
 println(formatter.formatRegistrationString("7TVAA"))
 // → "7T-VAA"
+```
+
+## Changelog
+
+#### 1.0 
+Initial version
+
+#### 1.0.1
+Bugfix - no more USA crashing on registrations without digits
+Marked all internal parts as internal

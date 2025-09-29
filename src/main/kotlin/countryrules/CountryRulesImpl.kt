@@ -3,7 +3,7 @@ package nl.joozd.aircraftreg.countryrules
 /**
  * Implement this to get auto-added to CountryRules.rulesMap
  */
-abstract class CountryRulesImpl(firstLetter: Char): CountryRules{
+internal abstract class CountryRulesImpl(firstLetter: Char): CountryRules{
     init{
         val listsWithThisLetter = CountryRules.rulesMap.getOrPut(firstLetter) { mutableListOf() }
         listsWithThisLetter.add(this)

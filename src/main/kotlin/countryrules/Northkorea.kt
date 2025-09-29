@@ -1,6 +1,6 @@
 package nl.joozd.aircraftreg.countryrules
 
-object Northkorea: CountryRulesImpl('P') {
+internal object Northkorea: CountryRulesImpl('P') {
     override val ranges = listOf(
         "P500" upTo "P999",
     )

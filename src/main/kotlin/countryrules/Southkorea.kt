@@ -1,6 +1,6 @@
 package nl.joozd.aircraftreg.countryrules
 
-object Southkorea: CountryRulesImpl('H') {
+internal object Southkorea: CountryRulesImpl('H') {
     override val ranges = listOf(
         "HL0000" upTo "HL9999",
     )

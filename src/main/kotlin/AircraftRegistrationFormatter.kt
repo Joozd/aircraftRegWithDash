@@ -9,7 +9,7 @@ import nl.joozd.aircraftreg.countryrules.getMap
  *
  * It follows the standards from https://en.wikipedia.org/wiki/List_of_aircraft_registration_prefixes
  */
-class AircraftRegistrationFormatter internal constructor (val rulesMap: Map<Char, List<CountryRules>>) {
+class AircraftRegistrationFormatter internal constructor (private val rulesMap: Map<Char, List<CountryRules>>) {
     constructor(): this(getMap())
 
     /**

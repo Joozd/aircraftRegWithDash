@@ -1,6 +1,6 @@
 package nl.joozd.aircraftreg.countryrules
 
-object Canada: CountryRulesImpl('C') {
+internal object Canada: CountryRulesImpl('C') {
     // C-FAAA to C-FZZZ
     // CF-AAA to CF-ZZZ (Pre-1957 vintage aircraft may be registered CF- instead of C-F, but we ignore that)
     // C-GAAA to C-GZZZ

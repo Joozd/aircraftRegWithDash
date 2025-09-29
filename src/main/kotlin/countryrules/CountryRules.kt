@@ -1,6 +1,6 @@
 package nl.joozd.aircraftreg.countryrules
 
-interface CountryRules {
+internal interface CountryRules {
     /**
      * true if [stringWithoutDash] falls under these rules.
      * This should include partial strings, e.g. "ZAA" should be in "ZAAAA"-"ZAZZZ"

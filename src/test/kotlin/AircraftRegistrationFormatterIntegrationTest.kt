@@ -55,12 +55,18 @@ class AircraftRegistrationFormatterIntegrationTest {
 
     @Test
     fun `United States N numbers keep no dash and follow FAA patterns`() {
-        println("wut?")
         // FAA patterns: N + (1–5 digits) OR digits+letters (I and O not used)
         // https://www.faa.gov/licenses_certificates/aircraft_certification/aircraft_registry/forming_nnumber
         assertEquals("N12345", f.formatRegistrationString("n-12345"))
         assertEquals("N123AB", f.formatRegistrationString(" N 123ab "))
         assertEquals("N1",     f.formatRegistrationString("n001"))     // leading zeros stripped by normalization logic if present
+    }
+
+    @Test
+    fun `United States N without digits`() {
+        assertEquals("NAPALM", f.formatRegistrationString("NAPALM"))
+        assertEquals("NUUT", f.formatRegistrationString(" N u_ut "))
+        assertEquals("NICE",     f.formatRegistrationString("N-ICE"))
     }
 
     // --- Normalization & fallbacks still behave with real rules ---

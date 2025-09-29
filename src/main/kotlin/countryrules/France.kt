@@ -1,7 +1,7 @@
 package nl.joozd.aircraftreg.countryrules
 
 // Includes French Overseas
-object France: CountryRulesImpl('F') {
+internal object France: CountryRulesImpl('F') {
     override val ranges = listOf(
         "FAAAA" upTo "FZZZZ"
     )

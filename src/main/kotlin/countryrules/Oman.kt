@@ -5,4 +5,6 @@ object Oman: CountryRulesImpl('A') {
         "A4OAA" upTo "A4OZZ",
         "A4OAAA" upTo "A4OZZZ"
     )
+
+    override val charsBeforeDash = 3
 }

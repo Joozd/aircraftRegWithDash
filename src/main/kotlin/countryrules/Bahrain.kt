@@ -6,4 +6,6 @@ object Bahrain: CountryRulesImpl('A') {
         "A9CAAA" upTo "A9CZZZ",
         "A9CAAAA" upTo "A9CZZZZ"
     )
+
+    override val charsBeforeDash = 3
 }

@@ -9,7 +9,10 @@ abstract class CountryRulesImpl(firstLetter: Char): CountryRules{
         listsWithThisLetter.add(this)
     }
 
-    abstract val ranges: List<ForgivingRange>
+    /**
+     * Override this to use standard isInRange function
+     */
+    open val ranges: List<ForgivingRange> = emptyList()
 
     /**
      * true if [stringWithoutDash] falls under these rules.
@@ -20,11 +23,13 @@ abstract class CountryRulesImpl(firstLetter: Char): CountryRules{
         return ranges.any{ range -> upperCased in range }
     }
 
+    open val charsBeforeDash: Int = 1
+
     /**
      * This is the most used implementation: 2 characters, dash, the rest.
      * For other implementations: override this function
      */
     override fun getCorrectString(stringWithoutDash: String): String =
-        if(stringWithoutDash.length <= 2) stringWithoutDash
-        else stringWithoutDash.take(2) + "-" + stringWithoutDash.drop(2)
+        if(stringWithoutDash.length <= charsBeforeDash) stringWithoutDash
+        else stringWithoutDash.take(charsBeforeDash) + "-" + stringWithoutDash.drop(charsBeforeDash)
 }

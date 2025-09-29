@@ -7,4 +7,10 @@ object Venezuela: CountryRulesImpl('Y') {
         "YV100E" upTo "YV999E",
         "YVO100" upTo "YVO999"
     )
+
+    /**
+     * Venezuela doesn't do dashes.
+     */
+    override fun getCorrectString(stringWithoutDash: String): String =
+        stringWithoutDash
 }

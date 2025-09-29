@@ -1,9 +1,16 @@
 package nl.joozd.aircraftreg.countryrules
 
 object Unitedstates: CountryRulesImpl('N') {
-    override val ranges = listOf(
-        "N1" upTo "N99999",
-        "N1A" upTo "N9999Z",
-        "N1AA" upTo "N999ZZ"
-    )
+    /**
+     * true if [stringWithoutDash] falls under these rules.
+     * This includes partial strings, e.g. "ZAA" should be in "ZAAAA"-"ZAZZZ"
+     */
+    override fun isInRange(stringWithoutDash: String): Boolean =
+        stringWithoutDash.startsWith("N")
+
+    /**
+     * USA doesn't do dashes.
+     */
+    override fun getCorrectString(stringWithoutDash: String): String =
+        stringWithoutDash
 }

@@ -53,7 +53,7 @@ dokka {
     }
 
     dokkaSourceSets.main {
-        includes.from("serialization.md")
+        includes.from("README.md")
 
         // JDK target
         jdkVersion.set(17)
@@ -61,7 +61,7 @@ dokka {
         // Source links (use helper that wraps URI in v2)
         sourceLink {
             localDirectory.set(file("src/main/kotlin"))
-            remoteUrl("https://github.com/Joozd/AircraftSource/tree/master/src/main/kotlin")
+            remoteUrl("https://github.com/Joozd/aircraftRegWithDash/tree/master/src/main/kotlin")
             remoteLineSuffix.set("#L")
         }
 
@@ -102,7 +102,7 @@ publishing {
             from(components["java"])
 
             groupId = groupID
-            artifactId = "aircraftsource-serialization"
+            artifactId = "aircraftreg"
             version = versionName
 
             artifact(sourceJar.get())
@@ -113,9 +113,9 @@ publishing {
             }
 
             pom {
-                name.set("AircraftSource Serialization Module")
-                description.set("Handles protobuf-based serialization of aircraft data for the AircraftSource project.")
-                url.set("https://github.com/Joozd/AircraftSource")
+                name.set("Aircraft Registration Formatter")
+                description.set("Formats Aircraft Registrations correctly")
+                url.set("https://github.com/Joozd/aircraftRegWithDash")
                 licenses {
                     license {
                         name.set("Apache License 2.0")

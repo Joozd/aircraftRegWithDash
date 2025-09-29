@@ -16,16 +16,17 @@ class AircraftRegistrationFormatter internal constructor (val rulesMap: Map<Char
      * Format the given registration string into its canonical form.
      */
     fun formatRegistrationString(registrationString: String): String{
+        println("Normalizing $registrationString")
         if(registrationString.isBlank()) return ""
-        val normalized = registrationString.filter { it.isDigit() || it in 'a'..'z' || it in 'A'..'Z' }
+        val normalized = registrationString.filter { it.isDigit() || it in 'a'..'z' || it in 'A'..'Z' }.uppercase()
+        println("Normalized = $normalized")
 
         val applicableRule = rulesMap[normalized.first()]?.firstOrNull { countryRules -> countryRules.isInRange(normalized) }
-        if (applicableRule != null) return applicableRule.getCorrectString(normalized)
+            ?.also{ println("Applicable rule: ${it::class.simpleName}")}
+        if (applicableRule != null) return applicableRule.getCorrectString(normalized).uppercase()
 
-        return normalized.putDashAtPos2()
+        return normalized.putDashAtPos2().uppercase()
     }
-
-
 
     /**
      * Inserts a dash after the first two characters of the string.
